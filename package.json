@@ -1,0 +1,42 @@
+{
+  "name": "three-multifaceted-refraction",
+  "version": "1.0.0",
+  "description": "Three.js project which explores multifaceted refraction using convex geometries, and the physical phenomena involved in it.",
+  "main": "index.js",
+  "author": "Andrés Valencia Téllez",
+  "license": "MIT",
+  "scripts": {
+    "tslint": "tslint --project tsconfig.json",
+    "tslint:fix": "tslint --fix --project tsconfig.json",
+    "prettier": "prettier -l \"**/*.ts\" \"**/*.tsx\" \"**/*.json\"",
+    "prettier:fix": "prettier --write -l \"**/*.ts\" \"**/*.tsx\" \"**/*.json\"",
+    "test": "yarn run tslint && yarn run prettier",
+    "fix": "yarn tslint:fix && yarn prettier:fix",
+    "build": "webpack --config webpack/prod.config.js",
+    "start": "webpack-dev-server --config webpack/dev.config.js",
+    "start:local": "yarn start --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@types/animejs": "^3.1.0",
+    "animejs": "^3.1.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "guify": "^0.12.0",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
+    "prettier": "^1.19.1",
+    "source-map-loader": "^0.2.4",
+    "stats.js": "^0.17.0",
+    "three": "^0.112.1",
+    "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "typescript": "^3.7.4",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
