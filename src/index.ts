@@ -61,7 +61,6 @@ const renderTarget = new WebGLRenderTarget(
   canvas.offsetWidth,
   canvas.offsetHeight,
   {
-    depthBuffer: false,
     type: HalfFloatType
   }
 );
@@ -83,9 +82,7 @@ const backMaterial = new ShaderMaterial({
   void main() {
     gl_FragColor.rgb = vWorldNormal;
   }`,
-  side: BackSide,
-  depthWrite: false,
-  depthTest: false
+  side: BackSide
 });
 const material = new ShaderMaterial({
   uniforms: {
@@ -214,10 +211,10 @@ window.addEventListener("resize", (event: UIEvent) => {
 
 function render() {
   renderer.setRenderTarget(renderTarget);
-  renderer.clearColor();
+  renderer.clear(true, true);
   renderer.render(backScene, camera);
   renderer.setRenderTarget(null);
-  renderer.clearColor();
+  renderer.clear(true, true);
   renderer.render(scene, camera);
 }
 
